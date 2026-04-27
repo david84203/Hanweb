@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+/* ── Design Tokens ── */
+:root {
+  --color-cream:     #FCFBF9;
+  --color-sage:      #7A8A77;
+  --color-sage-bg:   #D4DFD2;
+  --color-gold:      #A88B54;
+  --color-gold-bg:   #F4E8D1;
+  --color-rose:      #A87B7B;
+  --color-rose-bg:   #F2E3E3;
+}
+
+/* ── Typography ── */
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-serif {
+  font-family: 'Noto Serif TC', serif;
+}
+
+/* ── Smooth scroll ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Selection color ── */
+::selection {
+  background-color: var(--color-sage-bg);
+  color: white;
+}
