@@ -32,3 +32,14 @@ html {
   background-color: var(--color-sage-bg);
   color: white;
 }
+
+/* ── Lookbook fade-up animation ── */
+.lb-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.lb-fade.lb-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
