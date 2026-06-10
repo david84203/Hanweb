@@ -74,7 +74,7 @@ export default function CollagenTab() {
         <div className="max-w-2xl mx-auto">
           <FadeIn>
             <div className="flex flex-col items-center gap-8">
-              <div className="w-36 h-36 rounded-full overflow-hidden shadow-xl shadow-[#D4C9C1]/20 shrink-0">
+              <div className="w-44 h-44 rounded-full overflow-hidden shadow-xl shadow-[#D4C9C1]/20 shrink-0">
                 <SmartImg
                   base="/collagen/03"
                   alt="主理人 Han"
