@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import SmartImg from '../SmartImg';
 
 function useFadeInOnScroll(options) {
   const ref = useRef(null);
@@ -44,8 +45,8 @@ export default function StoryTab() {
       <section className="bg-[#FAFAFA] px-6 pt-16 pb-20">
         <FadeIn>
           <div className="rounded-3xl overflow-hidden mb-12 aspect-[4/5] shadow-sm">
-            <img
-              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80"
+            <SmartImg
+              base="/story/01"
               alt="質感獨照"
               className="w-full h-full object-cover"
             />
@@ -113,8 +114,8 @@ export default function StoryTab() {
 
         <FadeIn delay="delay-150">
           <div className="rounded-[2.5rem] overflow-hidden mb-12 aspect-square shadow-sm mx-2">
-            <img
-              src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?auto=format&fit=crop&w=800&q=80"
+            <SmartImg
+              base="/story/02"
               alt="保養氛圍特寫"
               className="w-full h-full object-cover"
             />
@@ -136,8 +137,8 @@ export default function StoryTab() {
       <section className="bg-[#FAFAFA] px-6 py-24">
         <FadeIn>
           <div className="rounded-t-[3rem] rounded-b-3xl overflow-hidden mb-12 aspect-[4/3] shadow-sm">
-            <img
-              src="https://images.unsplash.com/photo-1518155317743-a8ff43ea6a5f?auto=format&fit=crop&w=800&q=80"
+            <SmartImg
+              base="/story/03"
               alt="質感生活與另一半"
               className="w-full h-full object-cover"
             />
@@ -204,13 +205,13 @@ export default function StoryTab() {
         <FadeIn delay="delay-150">
           <div className="grid grid-cols-2 gap-3 mb-16">
             <div className="col-span-2 aspect-[16/9] rounded-2xl overflow-hidden shadow-sm">
-              <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80" alt="照相館側拍" className="w-full h-full object-cover" />
+              <SmartImg base="/story/04" alt="照相館側拍" className="w-full h-full object-cover" />
             </div>
             <div className="aspect-square rounded-2xl overflow-hidden shadow-sm">
-              <img src="https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=400&q=80" alt="質感料理" className="w-full h-full object-cover" />
+              <SmartImg base="/story/05" alt="質感料理" className="w-full h-full object-cover" />
             </div>
             <div className="aspect-square rounded-2xl overflow-hidden shadow-sm">
-              <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=400&q=80" alt="歐洲旅遊" className="w-full h-full object-cover" />
+              <SmartImg base="/story/06" alt="歐洲旅遊" className="w-full h-full object-cover" />
             </div>
           </div>
         </FadeIn>

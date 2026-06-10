@@ -1,12 +1,13 @@
 import React from 'react';
+import SmartImg from '../SmartImg';
 
 export default function HomeTab() {
     return (
         <div className="min-h-screen bg-[var(--color-cream)] flex flex-col pb-20">
             {/* 主視覺 */}
             <div className="relative w-full h-[55vh]">
-                <img
-                    src="/images/Han.jpg"
+                <SmartImg
+                    base="/home/01"
                     alt="Han"
                     className="w-full h-full object-cover"
                     loading="eager"

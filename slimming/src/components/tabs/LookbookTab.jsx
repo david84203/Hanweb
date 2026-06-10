@@ -1,4 +1,5 @@
 // @ts-nocheck
+import SmartImg from '../SmartImg';
 import React, { useEffect } from 'react';
 import {
   ArrowRight, Sparkles, Heart, Sun, Leaf,
@@ -66,7 +67,7 @@ export default function LookbookTab() {
         <div className="w-full px-6 flex flex-col items-center gap-10 relative z-10 py-16">
           {/* 圖片 */}
           <div className="lb-fade w-full max-w-[320px] aspect-[3/4] rounded-[16px] overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.2)] bg-gray-100 border-[6px] border-white/80 relative">
-            <img src="/lookbook/01.jpg" alt="Han — 莎朗嘿yo 負責人" className="w-full h-full object-cover" loading="eager" />
+            <SmartImg base="/lookbook/01" alt="Han — 莎朗嘿yo 負責人" className="w-full h-full object-cover" loading="eager" />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/40 via-transparent to-transparent h-1/3 pointer-events-none" />
             <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-sm shadow-lg border border-[#E5DCD0]">
               <p className="text-[9px] text-[#C9A87C] tracking-[0.2em] uppercase font-bold mb-0.5">Since 2015</p>
@@ -111,7 +112,7 @@ export default function LookbookTab() {
           </div>
           <div className="lb-fade">
             <div className="aspect-[4/5] rounded-[12px] overflow-hidden shadow-[0_20px_50px_-15px_rgba(0,0,0,0.12)] bg-gray-100 mb-8">
-              <img src="/lookbook/02.jpg" alt="原生美肌" className="w-full h-full object-cover" loading="lazy" />
+              <SmartImg base="/lookbook/02" alt="原生美肌" className="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
           <div className="lb-fade">
@@ -150,7 +151,7 @@ export default function LookbookTab() {
           </div>
           <div className="lb-fade">
             <div className="aspect-[4/5] rounded-[12px] overflow-hidden shadow-[0_20px_50px_-15px_rgba(0,0,0,0.12)] bg-gray-100 mb-8">
-              <img src="/lookbook/03.jpg" alt="晨間發光儀式" className="w-full h-full object-cover" loading="lazy" />
+              <SmartImg base="/lookbook/03" alt="晨間發光儀式" className="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
           <div className="lb-fade">
@@ -189,7 +190,7 @@ export default function LookbookTab() {
           </div>
           <div className="lb-fade">
             <div className="aspect-[4/5] rounded-[12px] overflow-hidden shadow-[0_20px_50px_-15px_rgba(0,0,0,0.12)] bg-gray-100 mb-8">
-              <img src="/lookbook/04.jpg" alt="輕盈生活" className="w-full h-full object-cover" loading="lazy" />
+              <SmartImg base="/lookbook/04" alt="輕盈生活" className="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
           <div className="lb-fade">
@@ -219,7 +220,7 @@ export default function LookbookTab() {
         <div className="max-w-2xl mx-auto">
           <div className="lb-fade">
             <div className="aspect-square rounded-[12px] overflow-hidden shadow-[0_20px_50px_-15px_rgba(0,0,0,0.1)] bg-gray-100 mb-8">
-              <img src="/lookbook/05.jpg" alt="美學合夥人" className="w-full h-full object-cover" loading="lazy" />
+              <SmartImg base="/lookbook/05" alt="美學合夥人" className="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
           <div className="lb-fade">

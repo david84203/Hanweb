@@ -1,4 +1,5 @@
 import React from 'react';
+import SmartImg from '../SmartImg';
 import { ChevronRight, CheckCircle2 } from 'lucide-react';
 
 const LINE_OA_ID = '@726rmfol';
@@ -26,7 +27,7 @@ const PrimaryButton = ({ href, text }) => (
 const offers = [
   {
     title: "🕊️ 階段一：細節保養｜感知優雅的開始",
-    image: "https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=1974&auto=format&fit=crop",
+    image: "/skin/02",
     budgetTip: "適合想微調狀態的妳。以一千出頭的無負擔預算，無痛體驗精緻選品的質感。",
     items: [
       { name: "1.【柔嫩細節・唇部柔焦 SPA 組】", desc: "最迷人的妝容，往往藏在細節裡。富含乳木果油溫和帶走死皮，深層封存水分，重現母胎般的柔嫩唇色。" },
@@ -36,7 +37,7 @@ const offers = [
   },
   {
     title: "🌿 階段二：基礎體驗｜建立純淨屏障",
-    image: "https://images.unsplash.com/photo-1552046122-33169ce71d15?q=80&w=2070&auto=format&fit=crop",
+    image: "/skin/03",
     budgetTip: "適合尋找溫和打底的妳。預算約落在一至兩千元，給予肌膚極簡且安心的呵護。",
     items: [
       { name: "4.【極簡淨化・會呼吸的洗顏組】", desc: "保養的第一步從把臉洗對開始。溫和帶走油脂髒汙不乾澀，還原肌膚深呼吸的純淨感。" },
@@ -45,7 +46,7 @@ const offers = [
   },
   {
     title: "✨ 階段三：核心週期｜精準煥膚計畫",
-    image: "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=1974&auto=format&fit=crop",
+    image: "/skin/04",
     budgetTip: "針對渴望明顯改善粗糙、暗沉與瑕疵的妳。相當於每天少喝一杯咖啡的預算，投資一季的細緻透亮。",
     items: [
       {
@@ -61,7 +62,7 @@ const offers = [
   },
   {
     title: "🤍 階段四：專屬高訂｜私人保養策展",
-    image: "https://images.unsplash.com/photo-1600573679803-3d02a58b5e39?q=80&w=2070&auto=format&fit=crop",
+    image: "/skin/05",
     budgetTip: "適合渴望突破現狀、或追求極致客製化的妳。享受一場毫無負擔的專業對談。",
     items: [
       { name: "7.【Han 的專屬私訂・1 對 1 膚況 Omakase】", desc: "最高級的養膚，是給予肌膚「剛剛好」的精準對策。透過 10 年的美業底蘊，我將陪妳檢視目前的保養盲點。無論是解決複雜困擾或追求巔峰狀態，都將依照真實膚況與預算，量身調配專屬的養膚提案。" },
@@ -75,10 +76,8 @@ export default function SkinTab() {
 
       {/* Hero */}
       <section className="relative w-full h-[75vh] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center z-0"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2070&auto=format&fit=crop')" }}
-        >
+        <div className="absolute inset-0 z-0">
+          <SmartImg base="/skin/01" alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/45" />
         </div>
         <div className="relative z-10 text-center px-8 max-w-sm mx-auto flex flex-col items-center">
@@ -149,7 +148,7 @@ export default function SkinTab() {
           {offers.map((offer, index) => (
             <div key={index} className="bg-[#FAF8F5] rounded-[2rem] overflow-hidden border border-[#EBE5DF]">
               <div className="h-40 w-full">
-                <img src={offer.image} alt="氛圍圖" className="w-full h-full object-cover opacity-90" />
+                <SmartImg base={offer.image} alt="氛圍圖" className="w-full h-full object-cover opacity-90" />
               </div>
               <div className="p-6">
                 <h3 className="text-base font-medium text-gray-900 mb-3">{offer.title}</h3>

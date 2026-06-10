@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import SmartImg from '../SmartImg';
 import FadeIn from '../FadeIn';
 
 // 自訂色彩（對應 page3 的 brand-* 色票）
@@ -12,8 +13,8 @@ export default function CollagenTab() {
       {/* 1. Hero */}
       <section className="relative w-full h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+          <SmartImg
+            base="/collagen/01"
             alt="光影與肌膚意象"
             className="w-full h-full object-cover opacity-80"
           />
@@ -34,8 +35,8 @@ export default function CollagenTab() {
         <div className="max-w-2xl mx-auto">
           <FadeIn>
             <div className="aspect-[3/4] overflow-hidden rounded-sm shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] mb-10">
-              <img
-                src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+              <SmartImg
+                base="/collagen/02"
                 alt="純淨氛圍"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
               />
@@ -74,8 +75,8 @@ export default function CollagenTab() {
           <FadeIn>
             <div className="flex flex-col items-center gap-8">
               <div className="w-36 h-36 rounded-full overflow-hidden shadow-xl shadow-[#D4C9C1]/20 shrink-0">
-                <img
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                <SmartImg
+                  base="/collagen/03"
                   alt="主理人 Han"
                   className="w-full h-full object-cover object-top"
                 />
@@ -115,34 +116,34 @@ export default function CollagenTab() {
             {[
               {
                 num: '01', title: '極致微小的滲透藝術',
-                img: 'https://images.unsplash.com/photo-1550989460-0adf9ea622e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                img: '/collagen/04',
                 desc: '1000-3000 道爾頓的極致胜肽分子，能以最高效的姿態，在兩小時內溫柔遊走全身。我們將 5g 的有效胜肽收攏於一小包中，這等同於 2-3 條深海魚的珍貴精華，為妳帶來真正有感的吸收。'
               },
               {
                 num: '02', title: '21 型全方位的細緻呵護',
-                img: 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                img: '/collagen/05',
                 desc: '捨棄市售單一型態的侷限，我們珍萃深海鯰魚魚皮，完整保留 21 型膠原蛋白。從臉龐的澎潤、支撐衣著的自信線條，到步履間的輕盈細節，給予全身毫無死角的細膩照顧。'
               },
               {
                 num: '03', title: '雙蛋白協同的彈潤金字塔',
-                img: 'https://images.unsplash.com/photo-1507005891461-127e7d03f5ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                img: '/collagen/06',
                 desc: '5000mg 義大利鯰魚膠原蛋白肽，遇上源自日本珍稀「彈性蛋白」。若膠原蛋白是穩固基底的水泥，彈性蛋白便是賦予韌性的鋼筋，兩者完美協同，由內而外喚醒全身肌膚的Ｑ彈保水度。'
               },
               {
                 num: '04', title: '植萃飆速的純淨配方',
-                img: 'https://images.unsplash.com/photo-1490818387583-1baba5e638ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                img: '/collagen/07',
                 desc: '揉合維他命 C 之王「刺梨」、含鐵與葉酸的「法國紅甜菜根」，及青春「巴西莓果」。這組配方不僅將吸收率優雅提升 29%，更溫柔擁抱女性內在保養，細心安撫每個月的那些不適。'
               },
               {
                 num: '05', title: '尋回專屬的隱形彈力網',
-                img: 'https://images.unsplash.com/photo-1601614210648-522614b1b827?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                img: '/collagen/08',
                 desc: '透過頂級胜肽的深層滋養，幫助身體重塑內在懸吊支撐的「彈力網」。讓歲月帶走的緊緻，以最不費力的方式，重新回到挺拔迷人的理想狀態。'
               },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 80}>
                 <div>
                   <div className="aspect-square overflow-hidden mb-4 rounded-sm">
-                    <img src={item.img} alt={item.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                    <SmartImg base={item.img} alt={item.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                   </div>
                   <div className="font-serif text-[#D4C9C1] text-xl mb-1">{item.num}</div>
                   <h3 className="text-base font-medium tracking-wider mb-3">{item.title}</h3>

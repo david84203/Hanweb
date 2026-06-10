@@ -1,4 +1,5 @@
 import React from 'react';
+import SmartImg from './SmartImg';
 
 /**
  * HeroSection — 核心視覺（The Vibe）
@@ -9,8 +10,8 @@ export default function HeroSection() {
         <section className="relative w-full bg-[var(--color-cream)]">
             {/* 情境圖 */}
             <div className="w-full h-[65vh] relative">
-                <img
-                    src="https://images.unsplash.com/photo-1499933374294-4584851497cc?auto=format&fit=crop&w=800&q=80"
+                <SmartImg
+                    base="/slimming/01"
                     alt="自然光感下展現輕盈自信的女性"
                     className="w-full h-full object-cover rounded-b-[2.5rem]"
                     loading="eager"
