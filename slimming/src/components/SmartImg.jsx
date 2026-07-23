@@ -1,21 +1,36 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
-// 圖片副檔名可能是 .jpg 或 .png：先試 .jpg，載入失敗自動改試 .png
-// 用法：<SmartImg base="/collagen/01" alt="..." className="..." />
-export default function SmartImg({ base, ...props }) {
-  const [ext, setExt] = useState('jpg');
+const FALLBACK_EXTS = ['jpg', 'png', 'webp'];
+
+// Usage: <SmartImg base="/collagen/01" alt="..." className="..." />
+export default function SmartImg({ base, onError, ...props }) {
+  const [fallbackIndex, setFallbackIndex] = useState(0);
+  const [failed, setFailed] = useState(false);
 
   useEffect(() => {
-    setExt('jpg');
+    setFallbackIndex(0);
+    setFailed(false);
   }, [base]);
 
-  if (ext === 'none') return null;
+  if (failed) return null;
+
+  const ext = FALLBACK_EXTS[fallbackIndex];
 
   return (
     <img
-      src={`${base}.${ext}`}
-      onError={() => setExt(ext === 'jpg' ? 'png' : 'none')}
       {...props}
+      src={`${base}.${ext}`}
+      onError={(event) => {
+        onError?.(event);
+        setFallbackIndex((current) => {
+          const next = current + 1;
+          if (next >= FALLBACK_EXTS.length) {
+            setFailed(true);
+            return current;
+          }
+          return next;
+        });
+      }}
     />
   );
 }
