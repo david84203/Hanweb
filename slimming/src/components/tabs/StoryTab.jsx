@@ -136,10 +136,10 @@ export default function StoryTab() {
       {/* 第三區塊：質感生活照與心境轉變 */}
       <section className="bg-[#FAFAFA] px-6 py-24">
         <FadeIn>
-          <div className="rounded-t-[3rem] rounded-b-3xl overflow-hidden mb-12 aspect-[4/3] shadow-sm">
+          <div className="rounded-t-[3rem] rounded-b-3xl overflow-hidden mb-12 aspect-[4/5] shadow-sm">
             <SmartImg
               base="/story/03"
-              alt="質感生活與另一半"
+              alt="拿著相機記錄日常"
               className="w-full h-full object-cover"
             />
           </div>
@@ -204,14 +204,14 @@ export default function StoryTab() {
 
         <FadeIn delay="delay-150">
           <div className="grid grid-cols-2 gap-3 mb-16">
-            <div className="col-span-2 aspect-[16/9] rounded-2xl overflow-hidden shadow-sm">
-              <SmartImg base="/story/04" alt="照相館側拍" className="w-full h-full object-cover" />
+            <div className="col-span-2 aspect-square rounded-2xl overflow-hidden shadow-sm">
+              <SmartImg base="/story/04" alt="與家人共享的日常料理" className="w-full h-full object-cover" />
             </div>
-            <div className="aspect-square rounded-2xl overflow-hidden shadow-sm">
-              <SmartImg base="/story/05" alt="質感料理" className="w-full h-full object-cover" />
+            <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-sm">
+              <SmartImg base="/story/05" alt="悠閒的居家時光" className="w-full h-full object-cover" />
             </div>
-            <div className="aspect-square rounded-2xl overflow-hidden shadow-sm">
-              <SmartImg base="/story/06" alt="歐洲旅遊" className="w-full h-full object-cover" />
+            <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-sm">
+              <SmartImg base="/story/06" alt="旅途中的海邊時光" className="w-full h-full object-cover" />
             </div>
           </div>
         </FadeIn>
