@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import SmartImg from '../SmartImg';
+import { buildLineUrl } from '../../lib/line';
 
 function useFadeInOnScroll(options) {
   const ref = useRef(null);
@@ -269,12 +270,17 @@ export default function StoryTab() {
         </FadeIn>
 
         {/* CTA 按鈕（非固定，隨頁面捲動，底部留空給 Tab 列） */}
-        <button className="w-full bg-[#DDBFB4] text-white py-5 text-center text-lg font-medium tracking-widest shadow-sm transition-opacity hover:opacity-95 active:opacity-90 flex items-center justify-center gap-2 rounded-xl mb-28">
+        <a
+          href={buildLineUrl('Han～我看了妳的故事很有感觸，想更了解妳說的這份美學事業 🤍')}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full bg-[#DDBFB4] text-white py-5 text-center text-lg font-medium tracking-widest shadow-sm transition-opacity hover:opacity-95 active:opacity-90 flex items-center justify-center gap-2 rounded-xl mb-28"
+        >
           開啟妳的溫柔轉折
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
-        </button>
+        </a>
       </section>
 
     </div>

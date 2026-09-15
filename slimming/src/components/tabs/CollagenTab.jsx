@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import SmartImg from '../SmartImg';
 import FadeIn from '../FadeIn';
+import { buildLineUrl, LINE_TEXT } from '../../lib/line';
 
 // 自訂色彩（對應 page3 的 brand-* 色票）
 // brand-bg: #FAF9F6 | brand-text: #3A3A3A | brand-muted: #7A7A7A
@@ -137,7 +138,7 @@ export default function CollagenTab() {
               {
                 num: '05', title: '尋回專屬的隱形彈力網',
                 img: '/collagen/08',
-                desc: '透過頂級胜肽的深層滋養，幫助身體重塑內在懸吊支撐的「彈力網」。讓歲月帶走的緊緻，以最不費力的方式，重新回到挺拔迷人的理想狀態。'
+                desc: '透過頂級胜肽的深層滋養，幫助身體維持內在懸吊支撐的「彈力網」，用最不費力的方式，享受挺拔迷人的理想狀態。'
               },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 80}>
@@ -203,13 +204,13 @@ export default function CollagenTab() {
               把保養化為一場靜謐的自我療癒，妳值得擁有最純粹的支撐。
             </p>
             <a
-              href="https://line.me/R/ti/p/@726rmfol"
+              href={buildLineUrl(LINE_TEXT.collagen)}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-[#C5B5A5] hover:bg-[#B3A190] text-white px-10 py-4 rounded-full text-sm tracking-widest transition-all duration-300 shadow-[0_10px_30px_-10px_rgba(197,181,165,0.6)] hover:-translate-y-1"
             >
               <span className="mr-2">🤍</span>
-              與 Han 預約妳的專屬澎潤計畫
+              與 Han 預約「澎潤 Q 彈計畫」諮詢
             </a>
             <p className="mt-6 text-xs text-[#7A7A7A]/70 tracking-wider leading-relaxed mb-24">
               輕點按鈕，將引導您前往官方 LINE 聊天室。<br />

@@ -2,9 +2,7 @@ import React from 'react';
 import SmartImg from '../SmartImg';
 import { ChevronRight, CheckCircle2 } from 'lucide-react';
 
-const LINE_OA_ID = '@726rmfol';
-const buildLineUrl = (text) =>
-  `https://line.me/R/oaMessage/${encodeURIComponent(LINE_OA_ID)}/?${encodeURIComponent(text)}`;
+import { buildLineUrl, LINE_TEXT } from '../../lib/line';
 
 const Section = ({ children, className = '', id = '' }) => (
   <section id={id} className={`py-20 px-6 w-full flex justify-center ${className}`}>
@@ -28,33 +26,33 @@ const offers = [
   {
     title: "🕊️ 階段一：細節保養｜感知優雅的開始",
     image: "/skin/02",
-    budgetTip: "適合想微調狀態的妳。以一千出頭的無負擔預算，無痛體驗精緻選品的質感。",
+    budgetTip: "適合想微調狀態的妳，用最小的改變感受質感升級。",
     items: [
       { name: "1.【柔嫩細節・唇部柔焦 SPA 組】", desc: "最迷人的妝容，往往藏在細節裡。富含乳木果油溫和帶走死皮，深層封存水分，重現母胎般的柔嫩唇色。" },
       { name: "2.【明眸亮眼・眼周平撫微導霜】", desc: "告別熬夜疲態。輕盈質地好吸收、不給眼周帶來多餘負擔，每天早晚的點按，就是點亮眼神的專屬儀式。" },
-      { name: "3.【局部重點・無瑕淨痘修護露】", desc: "化妝包裡最安心的後盾。溫和精準收斂局部瑕疵，給予肌膚最溫柔的安撫與舒緩。" },
+      { name: "3.【局部重點・無瑕淨痘舒緩露】", desc: "化妝包裡最安心的後盾。溫和精準收斂局部瑕疵，給予肌膚最溫柔的安撫與舒緩。" },
     ]
   },
   {
     title: "🌿 階段二：基礎體驗｜建立純淨屏障",
     image: "/skin/03",
-    budgetTip: "適合尋找溫和打底的妳。預算約落在一至兩千元，給予肌膚極簡且安心的呵護。",
+    budgetTip: "適合尋找溫和打底的妳，給予肌膚極簡且安心的呵護。",
     items: [
       { name: "4.【極簡淨化・會呼吸的洗顏組】", desc: "保養的第一步從把臉洗對開始。溫和帶走油脂髒汙不乾澀，還原肌膚深呼吸的純淨感。" },
-      { name: "5.【舒緩純粹・屏障重建水潤組】", desc: "給予嬌弱肌膚最安心的避風港。極簡純粹的植萃修護力安撫躁動，找回喝飽水般的健康柔嫩。" },
+      { name: "5.【舒緩純粹・屏障調理水潤組】", desc: "給予嬌弱肌膚最安心的避風港。極簡純粹的植萃呵護力安撫躁動，找回喝飽水般的健康柔嫩。" },
     ]
   },
   {
-    title: "✨ 階段三：核心週期｜精準煥膚計畫",
+    title: "✨ 階段三：核心週期｜精準煥新計畫",
     image: "/skin/04",
-    budgetTip: "針對渴望明顯改善粗糙、暗沉與瑕疵的妳。相當於每天少喝一杯咖啡的預算，投資一季的細緻透亮。",
+    budgetTip: "針對渴望明顯改善粗糙、暗沉與瑕疵的妳。用一季的時間，投資肌膚的細緻透亮。",
     items: [
       {
         name: "6.【溫和拋光・0.3% A醇煥新計畫】 🌟 (Han 私心最愛)",
         desc: (
           <span className="block mt-2">
             <strong className="text-gray-800 font-medium tracking-wide">針對反覆出現的粉刺顆粒與暗沉印記。</strong><br />
-            <span className="block mt-2">以精準 0.3% A醇溫和代謝老廢角質，不需經歷脫皮陣痛期，在睡夢中淡化瑕疵，重現宛如水煮蛋般的平滑淨透。</span>
+            <span className="block mt-2">以精準 0.3% A醇溫和喚醒肌膚更新節奏，不需經歷脫皮陣痛期，讓睡夢中的肌膚更顯平滑淨透。</span>
           </span>
         )
       },
@@ -66,7 +64,8 @@ const offers = [
     budgetTip: "適合渴望突破現狀、或追求極致客製化的妳。享受一場毫無負擔的專業對談。",
     items: [
       { name: "7.【Han 的專屬私訂・1 對 1 膚況 Omakase】", desc: "最高級的養膚，是給予肌膚「剛剛好」的精準對策。透過 10 年的美業底蘊，我將陪妳檢視目前的保養盲點。無論是解決複雜困擾或追求巔峰狀態，都將依照真實膚況與預算，量身調配專屬的養膚提案。" },
-    ]
+    ],
+    cta: { text: "預約專屬高訂對談 🤍", lineText: "Han～我想了解【階段四：專屬高訂】的內容" },
   }
 ];
 
@@ -131,7 +130,7 @@ export default function SkinTab() {
             如果妳對接下來的養膚提案感到心動卻仍有猶豫，我非常歡迎妳預約一場專屬的「肌膚微體驗」。
           </p>
           <PrimaryButton
-            href={buildLineUrl("Han 🤍 我想預約一場專屬的肌膚微體驗")}
+            href={buildLineUrl(LINE_TEXT.skin)}
             text="預約肌膚微體驗 🕊️"
           />
         </div>
@@ -163,6 +162,11 @@ export default function SkinTab() {
                     </div>
                   ))}
                 </div>
+                {offer.cta && (
+                  <div className="mt-8 text-center">
+                    <PrimaryButton href={buildLineUrl(offer.cta.lineText)} text={offer.cta.text} />
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -181,8 +185,8 @@ export default function SkinTab() {
         <div className="bg-white p-8 rounded-[2rem] text-center">
           <p className="text-lg font-serif text-gray-900 mb-6">現在，把手交給我吧 🤍</p>
           <PrimaryButton
-            href={buildLineUrl("Han 🤍 我想尋找專屬的養膚處方籤")}
-            text="尋找我的專屬處方籤 ✨"
+            href={buildLineUrl(LINE_TEXT.skin)}
+            text="預約專屬養膚處方籤 ✨"
           />
         </div>
         <div className="mt-10 text-center text-[#8C7A6B] font-serif italic text-xl pb-28">

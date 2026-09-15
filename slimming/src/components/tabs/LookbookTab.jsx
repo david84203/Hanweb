@@ -6,10 +6,7 @@ import {
   Feather, Instagram, MessageCircle
 } from 'lucide-react';
 
-const LINE_OA_ID = '@726rmfol';
-const buildLineUrl = (text) => text
-  ? `https://line.me/R/oaMessage/${encodeURIComponent(LINE_OA_ID)}/?${encodeURIComponent(text)}`
-  : `https://line.me/R/ti/p/${LINE_OA_ID}`;
+import { buildLineUrl, LINE_TEXT } from '../../lib/line';
 
 const LineCTAButton = ({ label, lineText, icon: Icon = ArrowRight, variant = 'primary' }) => {
   const variants = {
@@ -121,14 +118,14 @@ export default function LookbookTab() {
               身為造型師，這 10 年來我摸過無數張臉孔，深知再高超的遮瑕技巧，都需要一張純淨的畫布來承載。過去我也曾因為反覆的粗糙與瑕疵感到焦慮，盲目嘗試各種猛烈的酸類與保養偏方，結果反而破壞了肌膚原本的健康屏障。
             </p>
             <p className="text-[#3D2E22] text-sm leading-loose mb-4">
-              直到我懂得了「減法保養」與「溫和代謝」的藝術。透過早 C 晚 A 的精準煥膚節奏，溫柔地帶走老廢角質，讓肌膚重新深呼吸。
+              直到我懂得了「減法保養」的藝術。透過早 C 晚 A 的溫和保養節奏，讓肌膚重新深呼吸。
             </p>
             <p className="text-[#3D2E22] text-sm leading-loose mb-8">
               把底子養好，永遠是最聰明的投資。如果妳的保養也遇到了停滯期，讓我來幫妳梳理。
             </p>
             <LineCTAButton
-              label="索取專屬護膚方案"
-              lineText="Han～我看了網站的「原生美肌」介紹，想跟妳預約一對一的膚況諮詢 🤍"
+              label="了解原生美肌保養"
+              lineText={LINE_TEXT.skin}
             />
             <p className="text-[#7A6555] text-[10px] tracking-wide mt-3">＊ 點擊將開啟 LINE 對話，由 Han 為你進行一對一膚況諮詢</p>
           </div>
@@ -145,7 +142,8 @@ export default function LookbookTab() {
               <Heart size={12} /> Chapter 02 — Morning Glow
             </span>
             <h2 className="text-xl font-normal text-[#333333] tracking-wider relative inline-block">
-              晨間的發光儀式
+              晨間發光儀式
+              <span className="block text-sm text-[#7A6555] tracking-widest mt-2 font-light">澎潤 Q 彈計畫</span>
               <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-[2px] bg-[#C9A87C]" />
             </h2>
           </div>
@@ -157,7 +155,7 @@ export default function LookbookTab() {
           <div className="lb-fade">
             <p className="text-[#C9A87C] text-xs tracking-wider mb-4">「最高級的狀態，是就算素顏也充滿彈性與底氣。」</p>
             <p className="text-[#3D2E22] text-sm leading-loose mb-4">
-              每天早晨，在開啟一整天的忙碌之前，我一定會留給自己一段安靜的專屬儀式。真正的年輕感不僅僅是臉頰上的透亮，更是全身曲線的澎潤度與彈性。
+              每天早晨，在開啟一整天的忙碌之前，我一定會留給自己一段安靜的專屬儀式。真正迷人的狀態，不僅僅是臉頰上的透亮，更是全身曲線的澎潤度與彈性。
             </p>
             <p className="text-[#3D2E22] text-sm leading-loose mb-4">
               這款膠原蛋白肽，是我私下堅持了很久的自我投資。早晨加在溫水裡喝下，就像是溫柔地喚醒身體，為女性專屬的柔美線條注入剛剛好的支撐力。
@@ -166,8 +164,8 @@ export default function LookbookTab() {
               保養，從來不該是焦慮的追趕，而是學會好好寵愛自己的過程。
             </p>
             <LineCTAButton
-              label="了解專屬澎潤配方"
-              lineText="Han～我對「晨間發光儀式」很有興趣！想了解這個能維持澎潤與彈性的專屬配方 ✨"
+              label="了解澎潤 Q 彈計畫"
+              lineText={LINE_TEXT.collagen}
             />
             <p className="text-[#7A6555] text-[10px] tracking-wide mt-3">＊ 點擊將開啟 LINE 對話，Han 會為你推薦最適合的補充節奏</p>
           </div>
@@ -205,8 +203,8 @@ export default function LookbookTab() {
               如果妳也嚮往不用餓肚子、依然能優雅掌控狀態的輕盈自由，讓我為妳客製專屬的體態管理計畫。
             </p>
             <LineCTAButton
-              label="客製專屬輕盈計畫"
-              lineText="Han～好嚮往妳享受美食也不怕的輕盈感！想索取「體態管理計畫」與餐前配方資訊 🥐"
+              label="了解體態管理計畫"
+              lineText={LINE_TEXT.body}
             />
             <p className="text-[#7A6555] text-[10px] tracking-wide mt-3">＊ 點擊將開啟 LINE 對話，Han 會依據你的飲食習慣客製方案</p>
           </div>
@@ -241,7 +239,7 @@ export default function LookbookTab() {
               加入這個計畫，是我們一起提升生活質感、慢慢把日常過得精緻的過程。只要妳對質感生活有著真誠的嚮往，隨時歡迎妳來找我聊聊。
             </p>
             <LineCTAButton
-              label="探索美學合夥人計畫"
+              label="了解美學合夥人計畫"
               lineText="Han～我很喜歡妳分享的美學理念！想跟妳聊聊「美學合夥人」計畫 🕊️"
             />
           </div>
@@ -268,7 +266,7 @@ export default function LookbookTab() {
       {/* 浮動 LINE 按鈕（在 Tab 列上方） */}
       <div className="fixed bottom-[70px] right-4 z-40">
         <a
-          href={buildLineUrl('Hi Han，我想諮詢美學選品！')}
+          href={buildLineUrl(LINE_TEXT.custom)}
           target="_blank"
           rel="noopener noreferrer"
           className="w-12 h-12 bg-[#5C534A] text-white rounded-full flex flex-col items-center justify-center shadow-lg hover:scale-110 transition-transform"

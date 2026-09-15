@@ -1,4 +1,5 @@
 import React from 'react';
+import { buildLineUrl } from '../lib/line';
 
 /** 三步驟產品資料 */
 const STEPS = [
@@ -17,7 +18,7 @@ const STEPS = [
         title: '輕盈防禦屏障',
         subtitle: '小綠',
         description:
-            '澱粉愛好者的神隊友。在享受豐盛餐點時，幫助促進新陳代謝，陪妳零罪惡感地品味美食。',
+            '澱粉愛好者的神隊友。在享受豐盛餐點時，陪妳維持輕盈自在，零罪惡感地品味美食。',
         accentColor: 'var(--color-sage)',
         bgClass: 'bg-[var(--color-sage-bg)]/30',
         blurClass: 'bg-[var(--color-sage-bg)]/50',
@@ -65,6 +66,14 @@ export default function RitualSection() {
                                 <span className="text-sm font-sans font-light text-slate-500">/ {subtitle}</span>
                             </h3>
                             <p className="text-sm text-slate-600 leading-relaxed font-light">{description}</p>
+                            <a
+                                href={buildLineUrl(`Han～我想了解 STEP ${step}「${title}・${subtitle}」`)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1 mt-5 text-xs tracking-wider text-slate-700 border-b border-slate-400 pb-0.5 hover:text-slate-900 hover:border-slate-700 transition-colors"
+                            >
+                                預約了解{subtitle} →
+                            </a>
                         </div>
                     </div>
                 ))}
