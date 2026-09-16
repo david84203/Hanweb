@@ -25,9 +25,10 @@ const Divider = () => (
   </div>
 );
 
+// 按鈕文字就是送進 LINE 的預填句（A／B 兩句在 line.js 的 LINE_TEXT，LINE 後台各設一組關鍵字）
 const PrimaryButton = ({ text }) => (
   <a
-    href={buildLineUrl(LINE_TEXT.makeup)}
+    href={buildLineUrl(text)}
     target="_blank"
     rel="noopener noreferrer"
     className="inline-flex items-center justify-center gap-2 px-8 py-4 text-white rounded-full transition-all duration-300 text-sm font-light tracking-wider shadow-md hover:shadow-lg w-full sm:w-auto"
@@ -100,7 +101,7 @@ export default function MakeupTab() {
               tagline="先解決眼前最卡關的地方。"
               price="NT$1,600"
               detail="2 小時，當堂完成一個妝容。"
-              ctaText="我想預約彩妝教學實作課"
+              ctaText={LINE_TEXT.makeupA}
             />
             <PlanCard
               tag="方案 B"
@@ -108,7 +109,7 @@ export default function MakeupTab() {
               tagline="從頭建立一套屬於自己的妝容系統。"
               price="NT$18,800"
               detail="3 堂共 6 小時，一對一，每月限收 5 位。"
-              ctaText="我想了解個人彩妝養成課"
+              ctaText={LINE_TEXT.makeupB}
             />
           </div>
         </FadeIn>
@@ -156,7 +157,7 @@ export default function MakeupTab() {
             </div>
           </div>
           <div className="mt-8">
-            <PrimaryButton text="我想預約彩妝教學實作課" />
+            <PrimaryButton text={LINE_TEXT.makeupA} />
           </div>
         </FadeIn>
       </Section>
@@ -200,7 +201,7 @@ export default function MakeupTab() {
             </div>
           </div>
           <div className="mt-8">
-            <PrimaryButton text="我想了解個人彩妝養成課" />
+            <PrimaryButton text={LINE_TEXT.makeupB} />
           </div>
         </FadeIn>
       </Section>
