@@ -1,5 +1,9 @@
 import React from 'react';
+import { ShieldCheck } from 'lucide-react';
 import { buildLineUrl } from '../lib/line';
+
+/** 三張產品卡共用：製造商小字 */
+const MANUFACTURER_NOTE = '台灣製藥大廠 永信 製造';
 
 /** 三步驟產品資料 */
 const STEPS = [
@@ -66,6 +70,10 @@ export default function RitualSection() {
                                 <span className="text-sm font-sans font-light text-slate-500">/ {subtitle}</span>
                             </h3>
                             <p className="text-sm text-slate-600 leading-relaxed font-light">{description}</p>
+                            <p className="flex items-center gap-1 mt-3 text-xs text-slate-400">
+                                <ShieldCheck size={13} className="shrink-0" />
+                                {MANUFACTURER_NOTE}
+                            </p>
                             <a
                                 href={buildLineUrl(`Han～我想了解 STEP ${step}「${title}・${subtitle}」`)}
                                 target="_blank"

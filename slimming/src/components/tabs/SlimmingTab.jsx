@@ -10,8 +10,8 @@ export default function SlimmingTab() {
         <>
             <HeroSection />
             <SelfAssessmentSection />
-            <RitualSection />
             <TrustSection />
+            <RitualSection />
             <CtaSection />
         </>
     );
