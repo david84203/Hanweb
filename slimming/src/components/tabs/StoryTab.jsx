@@ -271,7 +271,7 @@ export default function StoryTab() {
 
         {/* CTA 按鈕（非固定，隨頁面捲動，底部留空給 Tab 列） */}
         <a
-          href={buildLineUrl('Han～看完妳的故事，想跟妳聊聊')}
+          href={buildLineUrl('Han～看完妳的故事，想跟妳聊聊我該從哪裡開始')}
           target="_blank"
           rel="noopener noreferrer"
           className="w-full bg-[#DDBFB4] text-white py-5 text-center text-lg font-medium tracking-widest shadow-sm transition-opacity hover:opacity-95 active:opacity-90 flex items-center justify-center gap-2 rounded-xl mb-28"

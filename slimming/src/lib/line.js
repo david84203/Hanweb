@@ -13,7 +13,7 @@ export const buildLineUrl = (text) => text
  */
 export const LINE_TEXT = {
   makeup:   '我想了解彩妝課',
-  makeupA:  '我想預約彩妝教學實作課',
+  makeupA:  '我想體驗彩妝教學實作課',
   makeupB:  '我想了解個人彩妝養成課',
   skin:     '我想了解原生美肌保養',
   collagen: '我想預約澎潤Q彈計畫的諮詢',
