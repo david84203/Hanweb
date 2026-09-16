@@ -75,7 +75,7 @@ export default function RitualSection() {
                                 {MANUFACTURER_NOTE}
                             </p>
                             <a
-                                href={buildLineUrl(`Han～我想了解 STEP ${step}「${title}・${subtitle}」`)}
+                                href={buildLineUrl(`Han～我想了解「${title}・${subtitle}」`)}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-1 mt-5 text-xs tracking-wider text-slate-700 border-b border-slate-400 pb-0.5 hover:text-slate-900 hover:border-slate-700 transition-colors"
