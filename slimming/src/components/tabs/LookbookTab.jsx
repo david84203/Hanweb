@@ -251,7 +251,7 @@ export default function LookbookTab({ onNavigate }) {
             </p>
             <LineCTAButton
               label="了解美學合夥人計畫"
-              lineText="Han～我很喜歡妳分享的美學理念！想跟妳聊聊「美學合夥人」計畫 🕊️"
+              lineText="Han～想跟妳聊聊「美學合夥人」計畫"
             />
           </div>
         </div>
