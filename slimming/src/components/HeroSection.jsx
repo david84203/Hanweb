@@ -27,7 +27,7 @@ export default function HeroSection() {
                     是活得<span className="italic text-[var(--color-sage)]">毫不費力</span>。
                 </h1>
                 <p className="text-sm text-slate-600 leading-relaxed font-light tracking-wider">
-                    享受美食與展現自信線條，不該是拉鋸戰。
+                    享受美食，和好好照顧自己，不該是拉鋸戰。
                     <br />
                     透過聰明的「內在管理儀式」，
                     <br />

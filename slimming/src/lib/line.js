@@ -23,7 +23,9 @@ export const LINE_TEXT = {
   makeupA:  '我想體驗彩妝教學實作課',
   makeupB:  '我想了解個人彩妝養成課',
   skin:     '我想了解原生美肌保養',
+  skinTrial: '我想預約免費肌膚微體驗',
   collagen: '我想預約澎潤Q彈計畫的諮詢',
   body:     '我想了解體態管理',
+  bodyStart: '我想開始體態管理計畫',
   custom:   '請Han幫我看',
 };

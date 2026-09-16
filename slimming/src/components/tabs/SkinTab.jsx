@@ -53,6 +53,7 @@ const offers = [
           <span className="block mt-2">
             <strong className="text-gray-800 font-medium tracking-wide">針對反覆出現的粉刺顆粒與暗沉印記。</strong><br />
             <span className="block mt-2">以精準 0.3% A醇溫和喚醒肌膚更新節奏，不需經歷脫皮陣痛期，讓睡夢中的肌膚更顯平滑淨透。</span>
+            <span className="block mt-3 text-xs text-[#8C7A6B] tracking-wide">✓ 通過專業美國皮膚科醫生驗證（Dermatologist-Validated）</span>
           </span>
         )
       },
@@ -113,7 +114,7 @@ export default function SkinTab({ onNavigate }) {
           我是 Han。這 10 年來，我將美學與保養結合，為妳篩選出不僅僅是「產品」，更是「改變」的契機。
         </p>
         <ul className="space-y-3 mt-4">
-          {['美國皮膚科醫師協會認可', '嚴格安全檢驗把關', '溫和科研配方', '拒絕極端速效傷害'].map((item, i) => (
+          {['十年美業經驗親自篩選', '嚴格安全檢驗把關', '溫和科研配方', '拒絕極端速效傷害'].map((item, i) => (
             <li key={i} className="flex items-center gap-3 text-gray-700 font-light text-sm">
               <CheckCircle2 className="w-4 h-4 text-[#8C7A6B] shrink-0" />
               {item}
@@ -127,11 +128,11 @@ export default function SkinTab({ onNavigate }) {
         <div className="bg-[#F4EFEB] rounded-[2rem] p-8 text-center">
           <h2 className="text-xl font-serif font-light text-gray-900 mb-4">在決定之前，先讓肌膚親自感受。</h2>
           <p className="text-gray-700 font-light leading-relaxed mb-8 text-sm">
-            如果妳對接下來的養膚提案感到心動卻仍有猶豫，我非常歡迎妳預約一場專屬的「肌膚微體驗」。
+            每個月開放 <strong className="text-gray-900 font-medium">10 個免費「肌膚微體驗」名額</strong>，到店讓肌膚親自試過再決定。<br /><br />不方便來店也沒關係，在 LINE 裡我一樣會仔細幫妳看膚況、推薦最適合妳的。直接購買也不用擔心，都有三個月滿意保證。
           </p>
           <PrimaryButton
-            href={buildLineUrl(LINE_TEXT.skin)}
-            text="預約肌膚微體驗 🕊️"
+            href={buildLineUrl(LINE_TEXT.skinTrial)}
+            text="預約免費肌膚微體驗 🕊️"
           />
         </div>
       </Section>
@@ -180,7 +181,6 @@ export default function SkinTab({ onNavigate }) {
         <div className="space-y-4 text-gray-700 font-light leading-relaxed text-sm text-center mb-8">
           <p>改變需要時間，而我會給妳足夠的耐心。</p>
           <p>提供業界少有的<strong className="text-gray-900 font-medium">「三個月滿意保證」</strong>，90 天內若不適合，我都會協助妳換貨。</p>
-          <p className="text-[#8C7A6B] font-medium pt-2">每個月僅開放 10 位專屬線上膚況諮詢名額。</p>
           <p>
             保養之後想學怎麼上妝，看看
             <button

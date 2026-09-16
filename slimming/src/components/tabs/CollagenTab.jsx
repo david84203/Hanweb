@@ -51,7 +51,7 @@ export default function CollagenTab() {
             <ul className="space-y-6">
               {[
                 '換了再多專櫃粉底，到了下午，眼周與法令紋還是悄悄卡了粉？',
-                '凝視鏡子時，發現臉部輪廓的線條，似乎不再像從前那般緊緻上揚？',
+                '最近照鏡子，總覺得氣色差了一點，卻又說不上來是哪裡？',
                 '即使每天認真保養，肌膚依然有種難以言喻的疲憊感、缺乏飽滿的彈性？',
                 '曾經嘗試過各種膠原蛋白，卻總覺得只是在吃心安，遲遲看不見期待的改變？',
               ].map((text, i) => (
@@ -102,43 +102,64 @@ export default function CollagenTab() {
         </div>
       </section>
 
+      {/* 3.5 主打段落 —— 整頁的核心宣告，細節留給下面的成分區 */}
+      <section className="py-16 px-6 bg-[#D4C9C1]/10 border-y border-[#D4C9C1]/10">
+        <div className="max-w-2xl mx-auto text-center">
+          <FadeIn>
+            <p className="text-sm leading-loose tracking-wider text-[#3A3A3A]/85 mb-10">
+              每包 5 公克小分子膠原蛋白肽，<br />來自義大利鯰魚。<br />
+              加上日本鰹魚心臟動脈球的彈性蛋白，<br />市面上少見。<br />
+              {/* 等 Han 給出維生素 C 含量、確認每份 >= 15 mg（每日參考值 100 mg 的 15%）後，
+                  下面這行才可以換成：再配刺梨的維生素 C，有助於膠原蛋白的形成。 */}
+              再配上刺梨、法國紅甜菜根與巴西莓果。
+            </p>
+            <p className="text-xl font-medium tracking-[0.35em] text-[#3A3A3A] mb-6">
+              養顏美容，青春美麗。
+            </p>
+            <p className="text-sm text-[#7A7A7A] tracking-wider leading-loose">
+              這是我能保證的部分，<br />其餘的妳自己喝過會知道。
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* 4. 成分美學 */}
       <section className="py-20 px-6">
         <div className="max-w-2xl mx-auto">
           <FadeIn>
             <div className="text-center mb-14">
               <p className="font-serif text-[#7A7A7A] italic mb-2 text-sm tracking-widest">Ingredient Aesthetics</p>
-              <h2 className="text-2xl font-medium tracking-wider mb-3">不妥協的成分美學</h2>
-              <p className="text-[#7A7A7A] text-sm">給身體的，理當是最純粹且精準的奢華給養。</p>
+              <h2 className="text-2xl font-medium tracking-wider mb-3">我自己是這樣喝的</h2>
+              <p className="text-[#7A7A7A] text-sm">每一項成分都有實際驗證，我才敢每天喝，也才敢推薦給妳。</p>
             </div>
           </FadeIn>
 
           <div className="space-y-12">
             {[
               {
-                num: '01', title: '極致微小的滲透藝術',
+                num: '01', title: '早上一包，開始一天前的小儀式',
                 img: '/collagen/04',
-                desc: '1000-3000 道爾頓的極致胜肽分子，能以最高效的姿態，在兩小時內溫柔遊走全身。我們將 5g 的有效胜肽收攏於一小包中，這等同於 2-3 條深海魚的珍貴精華，為妳帶來真正有感的吸收。'
+                desc: '每天早上，在忙碌開始之前，我會把一包加進溫水裡喝下。這是我留給自己的一段安靜時間，也因為十幾秒就能完成，才能一直持續下去。'
               },
               {
-                num: '02', title: '21 型全方位的細緻呵護',
+                num: '02', title: '每包 5 公克小分子膠原蛋白肽',
                 img: '/collagen/05',
-                desc: '捨棄市售單一型態的侷限，我們珍萃深海鯰魚魚皮，完整保留 21 型膠原蛋白。從臉龐的澎潤、支撐衣著的自信線條，到步履間的輕盈細節，給予全身毫無死角的細膩照顧。'
+                desc: '源自義大利鯰魚的小分子膠原蛋白肽，每一包實實在在 5 公克。分子小，身體才好利用；份量足，才不是在吃心安。'
               },
               {
-                num: '03', title: '雙蛋白協同的彈潤金字塔',
+                num: '03', title: '膠原蛋白加彈性蛋白，水泥加鋼筋',
                 img: '/collagen/06',
-                desc: '5000mg 義大利鯰魚膠原蛋白肽，遇上源自日本珍稀「彈性蛋白」。若膠原蛋白是穩固基底的水泥，彈性蛋白便是賦予韌性的鋼筋，兩者完美協同，由內而外喚醒全身肌膚的Ｑ彈保水度。'
+                desc: '彈性蛋白源自日本鰹魚的心臟動脈球，是市面上少見的成分。如果膠原蛋白是穩固基底的水泥，彈性蛋白就是賦予韌性的鋼筋，兩者一起搭配才完整。'
               },
               {
-                num: '04', title: '植萃飆速的純淨配方',
+                num: '04', title: '三種植萃，不只是膠原',
                 img: '/collagen/07',
-                desc: '揉合維他命 C 之王「刺梨」、含鐵與葉酸的「法國紅甜菜根」，及青春「巴西莓果」。這組配方不僅將吸收率優雅提升 29%，更溫柔擁抱女性內在保養，細心安撫每個月的那些不適。'
+                desc: '加了維他命 C 豐富的刺梨、含鐵與葉酸的法國紅甜菜根，還有巴西莓果。膠原蛋白從來不是只靠單一成分，所以我特別在意這一組有沒有配進來。'
               },
               {
-                num: '05', title: '尋回專屬的隱形彈力網',
+                num: '05', title: '我自己最有感的地方',
                 img: '/collagen/08',
-                desc: '透過頂級胜肽的深層滋養，幫助身體維持內在懸吊支撐的「彈力網」，用最不費力的方式，享受挺拔迷人的理想狀態。'
+                desc: '不只是臉。每天早上喝完的那個小儀式，讓我整天都感覺自己有好好照顧自己。保養從來不該是焦慮的追趕，而是學會好好寵愛自己的過程。'
               },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 80}>
@@ -213,8 +234,8 @@ export default function CollagenTab() {
               與 Han 預約「澎潤 Q 彈計畫」諮詢
             </a>
             <p className="mt-6 text-xs text-[#7A7A7A]/70 tracking-wider leading-relaxed mb-24">
-              輕點按鈕，將引導您前往官方 LINE 聊天室。<br />
-              Han 將親自為您進行一對一諮詢。
+              輕點按鈕，將引導妳前往官方 LINE 聊天室。<br />
+              Han 將親自為妳進行一對一諮詢。
             </p>
           </FadeIn>
         </div>

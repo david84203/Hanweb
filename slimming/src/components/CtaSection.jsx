@@ -34,7 +34,7 @@ export default function CtaSection() {
             </a>
 
             <p className="mt-6 text-xs text-slate-400 font-light tracking-wide">
-                一對一專屬諮詢・為您量身打造
+                一對一專屬諮詢・為妳量身打造
             </p>
         </section>
     );

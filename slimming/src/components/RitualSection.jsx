@@ -11,6 +11,9 @@ const STEPS = [
         step: '01',
         title: '內在淨化儀式',
         subtitle: '小黃',
+        productName: '膳食纖維粉末',
+        spec: '30 包／盒・每包 5 g',
+        price: 'NT$2,250',
         description:
             '補充日常難得的水溶性膳食纖維，幫妳卸下看不見的積累與負擔，找回久違的順暢與純淨。',
         accentColor: 'var(--color-gold)',
@@ -21,6 +24,9 @@ const STEPS = [
         step: '02',
         title: '輕盈防禦屏障',
         subtitle: '小綠',
+        productName: '白腎豆粉末',
+        spec: '30 包／盒・每包 5 g',
+        price: 'NT$2,450',
         description:
             '澱粉愛好者的神隊友。在享受豐盛餐點時，陪妳維持輕盈自在，零罪惡感地品味美食。',
         accentColor: 'var(--color-sage)',
@@ -31,6 +37,9 @@ const STEPS = [
         step: '03',
         title: '極致透亮光感',
         subtitle: '粉妍片',
+        productName: '粉妍片',
+        spec: '60 錠／盒・每錠 506 mg',
+        price: 'NT$2,680',
         description:
             '當身體清空了負擔，正是注入養分的最佳時機。為內在循環點燃火種，由內而外透出好氣色。',
         accentColor: 'var(--color-rose)',
@@ -41,7 +50,7 @@ const STEPS = [
 
 /**
  * RitualSection — 輕盈三部曲（The Ritual）
- * 用三張卡片呈現瘦身保養的三步驟產品。
+ * 用三張卡片呈現體態保養的三步驟產品。
  */
 export default function RitualSection() {
     return (
@@ -54,8 +63,20 @@ export default function RitualSection() {
                 </span>
             </h2>
 
+            {/* 價格公開，但刻意不做三支並排的價目表：先講「從一支開始」，再分別列 */}
+            <div className="mb-12 rounded-3xl border border-slate-100 bg-[#FAFAF8] px-6 py-6 text-center">
+                <p className="text-sm text-slate-600 leading-relaxed font-light">
+                    不用三支都買，<span className="text-slate-800 font-medium">從一支開始就好</span>。
+                    <br />
+                    最低從膳食纖維粉末 NT$2,250 起。
+                </p>
+                <p className="mt-3 text-xs text-slate-400 leading-relaxed font-light">
+                    一盒吃多久因人而異。想知道自己適合從哪一支開始，直接問我。
+                </p>
+            </div>
+
             <div className="space-y-10">
-                {STEPS.map(({ step, title, subtitle, description, accentColor, bgClass, blurClass }) => (
+                {STEPS.map(({ step, title, subtitle, productName, spec, price, description, accentColor, bgClass, blurClass }) => (
                     <div key={step} className={`${bgClass} rounded-3xl p-8 relative overflow-hidden`}>
                         <div className={`absolute -right-4 -top-4 w-24 h-24 ${blurClass} rounded-full blur-2xl`} />
                         <div className="relative z-10">
@@ -70,6 +91,10 @@ export default function RitualSection() {
                                 <span className="text-sm font-sans font-light text-slate-500">/ {subtitle}</span>
                             </h3>
                             <p className="text-sm text-slate-600 leading-relaxed font-light">{description}</p>
+                            <div className="mt-4 pt-3 border-t border-white/70">
+                                <p className="text-xs text-slate-500 font-light">{productName}・{spec}</p>
+                                <p className="mt-1 text-sm font-medium text-slate-800 tracking-wide">{price}</p>
+                            </div>
                             <p className="flex items-center gap-1 mt-3 text-xs text-slate-400">
                                 <ShieldCheck size={13} className="shrink-0" />
                                 {MANUFACTURER_NOTE}

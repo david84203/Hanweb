@@ -11,7 +11,7 @@ import LookbookTab from './components/tabs/LookbookTab';
 
 const TABS = [
   { id: 'home',     label: '首頁', icon: Home     },
-  { id: 'slimming', label: '瘦身', icon: Leaf     },
+  { id: 'slimming', label: '體態', icon: Leaf     },
   { id: 'story',    label: '故事', icon: Heart    },
   { id: 'skin',     label: '美肌', icon: Sparkles },
   { id: 'makeup',   label: '彩妝課', icon: Palette },

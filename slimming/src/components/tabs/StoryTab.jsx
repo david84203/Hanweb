@@ -56,6 +56,8 @@ export default function StoryTab() {
 
         <FadeIn delay="delay-150">
           <div className="space-y-8 text-[15px] leading-loose tracking-wide font-light px-2">
+            <p className="text-center font-serif text-[17px] leading-relaxed text-gray-800 !mb-10">這是我從「很用力」<br />走到「不費力」的十年。</p>
+            <h2 className="font-serif text-xl tracking-widest text-[#8C7A6B] !mb-2">很用力的那些年</h2>
             <p>從小，我就深刻體會現實的重量。</p>
 
             <p>
@@ -87,6 +89,7 @@ export default function StoryTab() {
       <section className="bg-[#F7F4F0] px-6 py-24">
         <FadeIn>
           <div className="space-y-8 text-[15px] leading-loose tracking-wide font-light px-2 mb-12">
+            <h2 className="font-serif text-xl tracking-widest text-[#8C7A6B] !mb-2">從敏感肌開始的轉折</h2>
             <p>
               學生時期的我，曾被嚴重的敏感與痘痘肌折磨，<br/>
               容貌焦慮讓我從未真正自信過。
@@ -148,6 +151,7 @@ export default function StoryTab() {
 
         <FadeIn delay="delay-150">
           <div className="space-y-8 text-[15px] leading-loose tracking-wide font-light px-2">
+            <h2 className="font-serif text-xl tracking-widest text-[#8C7A6B] !mb-2">學會停下來</h2>
             <p>回首這十年的每一頁，我看待世界的眼光漸漸不同。</p>
 
             <p>
@@ -181,6 +185,7 @@ export default function StoryTab() {
       <section className="bg-[#F7F4F0] px-6 pt-24 pb-12">
         <FadeIn>
           <div className="space-y-8 text-[15px] leading-loose tracking-wide font-light px-2 mb-16">
+            <h2 className="font-serif text-xl tracking-widest text-[#8C7A6B] !mb-2">現在的日常</h2>
             <p>
               「信仰第一，家庭第二，事業第三。」<br/>
               這是我深深認同的理念，<br/>

@@ -127,7 +127,7 @@ export default function LookbookTab({ onNavigate }) {
               label="了解原生美肌保養"
               lineText={LINE_TEXT.skin}
             />
-            <p className="text-[#7A6555] text-[10px] tracking-wide mt-3">＊ 點擊將開啟 LINE 對話，由 Han 為你進行一對一膚況諮詢</p>
+            <p className="text-[#7A6555] text-[10px] tracking-wide mt-3">＊ 點擊將開啟 LINE 對話，由 Han 為妳進行一對一膚況諮詢</p>
             <p className="text-[#3D2E22] text-sm leading-loose mt-6">
               養好底子之後，也可以來看看{' '}
               <button
@@ -166,10 +166,10 @@ export default function LookbookTab({ onNavigate }) {
           <div className="lb-fade">
             <p className="text-[#C9A87C] text-xs tracking-wider mb-4">「最高級的狀態，是就算素顏也充滿彈性與底氣。」</p>
             <p className="text-[#3D2E22] text-sm leading-loose mb-4">
-              每天早晨，在開啟一整天的忙碌之前，我一定會留給自己一段安靜的專屬儀式。真正迷人的狀態，不僅僅是臉頰上的透亮，更是全身曲線的澎潤度與彈性。
+              每天早晨，在開啟一整天的忙碌之前，我一定會留給自己一段安靜的專屬儀式。真正迷人的狀態，不只是臉上的透亮，是整個人看起來有在好好照顧自己。
             </p>
             <p className="text-[#3D2E22] text-sm leading-loose mb-4">
-              這款膠原蛋白肽，是我私下堅持了很久的自我投資。早晨加在溫水裡喝下，就像是溫柔地喚醒身體，為女性專屬的柔美線條注入剛剛好的支撐力。
+              這款膠原蛋白肽，是我私下堅持了很久的自我投資。早晨加在溫水裡喝下，就像是溫柔地喚醒身體，替自己補上日常顧不到的那一塊。
             </p>
             <p className="text-[#3D2E22] text-sm leading-loose mb-8">
               保養，從來不該是焦慮的追趕，而是學會好好寵愛自己的過程。
@@ -178,7 +178,7 @@ export default function LookbookTab({ onNavigate }) {
               label="了解澎潤 Q 彈計畫"
               lineText={LINE_TEXT.collagen}
             />
-            <p className="text-[#7A6555] text-[10px] tracking-wide mt-3">＊ 點擊將開啟 LINE 對話，Han 會為你推薦最適合的補充節奏</p>
+            <p className="text-[#7A6555] text-[10px] tracking-wide mt-3">＊ 點擊將開啟 LINE 對話，Han 會為妳推薦最適合的補充節奏</p>
           </div>
         </div>
       </section>
@@ -217,7 +217,7 @@ export default function LookbookTab({ onNavigate }) {
               label="了解體態管理計畫"
               lineText={LINE_TEXT.body}
             />
-            <p className="text-[#7A6555] text-[10px] tracking-wide mt-3">＊ 點擊將開啟 LINE 對話，Han 會依據你的飲食習慣客製方案</p>
+            <p className="text-[#7A6555] text-[10px] tracking-wide mt-3">＊ 點擊將開啟 LINE 對話，Han 會依據妳的飲食習慣客製方案</p>
           </div>
         </div>
       </section>
