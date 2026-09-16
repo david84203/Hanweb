@@ -34,7 +34,7 @@ const SectionDivider = () => (
   </div>
 );
 
-export default function LookbookTab() {
+export default function LookbookTab({ onNavigate }) {
   // 捲動淡入動畫
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -128,6 +128,17 @@ export default function LookbookTab() {
               lineText={LINE_TEXT.skin}
             />
             <p className="text-[#7A6555] text-[10px] tracking-wide mt-3">＊ 點擊將開啟 LINE 對話，由 Han 為你進行一對一膚況諮詢</p>
+            <p className="text-[#3D2E22] text-sm leading-loose mt-6">
+              養好底子之後，也可以來看看{' '}
+              <button
+                type="button"
+                onClick={() => onNavigate?.('makeup')}
+                className="underline underline-offset-2 text-[#C9A87C] font-medium"
+              >
+                彩妝課
+              </button>
+              ，學會怎麼把妝畫得更適合自己。
+            </p>
           </div>
         </div>
       </section>

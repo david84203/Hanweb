@@ -69,7 +69,7 @@ const offers = [
   }
 ];
 
-export default function SkinTab() {
+export default function SkinTab({ onNavigate }) {
   return (
     <div className="font-sans text-gray-800 bg-[#FAF8F5] min-h-screen selection:bg-[#E8DCCB] selection:text-gray-900">
 
@@ -181,6 +181,17 @@ export default function SkinTab() {
           <p>改變需要時間，而我會給妳足夠的耐心。</p>
           <p>提供業界少有的<strong className="text-gray-900 font-medium">「三個月滿意保證」</strong>，90 天內若不適合，我都會協助妳換貨。</p>
           <p className="text-[#8C7A6B] font-medium pt-2">每個月僅開放 10 位專屬線上膚況諮詢名額。</p>
+          <p>
+            保養之後想學怎麼上妝，看看
+            <button
+              type="button"
+              onClick={() => onNavigate?.('makeup')}
+              className="underline underline-offset-2 text-[#8C7A6B] font-medium"
+            >
+              彩妝課
+            </button>
+            {' '}→
+          </p>
         </div>
         <div className="bg-white p-8 rounded-[2rem] text-center">
           <p className="text-lg font-serif text-gray-900 mb-6">現在，把手交給我吧 🤍</p>

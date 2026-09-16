@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Home, Leaf, Heart, Sparkles, Star, Camera } from 'lucide-react';
+import { Home, Leaf, Heart, Sparkles, Palette, Star, Camera } from 'lucide-react';
 import TabBar from './components/TabBar';
 import HomeTab from './components/tabs/HomeTab';
 import SlimmingTab from './components/tabs/SlimmingTab';
 import StoryTab from './components/tabs/StoryTab';
 import SkinTab from './components/tabs/SkinTab';
+import MakeupTab from './components/tabs/MakeupTab';
 import CollagenTab from './components/tabs/CollagenTab';
 import LookbookTab from './components/tabs/LookbookTab';
 
@@ -13,6 +14,7 @@ const TABS = [
   { id: 'slimming', label: '瘦身', icon: Leaf     },
   { id: 'story',    label: '故事', icon: Heart    },
   { id: 'skin',     label: '美肌', icon: Sparkles },
+  { id: 'makeup',   label: '彩妝課', icon: Palette },
   { id: 'collagen', label: '膠原', icon: Star     },
   { id: 'lookbook', label: '精選', icon: Camera   },
 ];
@@ -53,14 +55,16 @@ const STRUCTURED_DATA = [
   },
 ];
 
-function renderTab(id) {
+// go：切換分頁的函式，只給需要導流到彩妝課的分頁當 onNavigate prop
+function renderTab(id, go) {
   switch (id) {
-    case 'home':     return <HomeTab />;
+    case 'home':     return <HomeTab onNavigate={go} />;
     case 'slimming': return <SlimmingTab />;
     case 'story':    return <StoryTab />;
-    case 'skin':     return <SkinTab />;
+    case 'skin':     return <SkinTab onNavigate={go} />;
+    case 'makeup':   return <MakeupTab />;
     case 'collagen': return <CollagenTab />;
-    case 'lookbook': return <LookbookTab />;
+    case 'lookbook': return <LookbookTab onNavigate={go} />;
     default:         return <HomeTab />;
   }
 }
@@ -80,7 +84,7 @@ export default function App() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(STRUCTURED_DATA) }}
       />
       <div className="max-w-md mx-auto bg-white shadow-2xl shadow-slate-100/50 min-h-screen relative overflow-x-hidden">
-        {renderTab(activeTab)}
+        {renderTab(activeTab, setActiveTab)}
         <TabBar tabs={TABS} active={activeTab} onChange={setActiveTab} />
       </div>
     </div>

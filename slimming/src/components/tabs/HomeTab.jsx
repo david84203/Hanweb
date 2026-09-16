@@ -1,7 +1,7 @@
 import React from 'react';
 import SmartImg from '../SmartImg';
 
-export default function HomeTab() {
+export default function HomeTab({ onNavigate }) {
     return (
         <div className="min-h-screen bg-[var(--color-cream)] flex flex-col pb-20">
             {/* 主視覺 */}
@@ -42,7 +42,14 @@ export default function HomeTab() {
                 </p>
 
                 <p className="mt-4 text-xs text-slate-500 leading-loose font-light">
-                    韓式照相館・輕盈保養・品牌美學
+                    韓式照相館・輕盈保養・品牌美學・
+                    <button
+                        type="button"
+                        onClick={() => onNavigate?.('makeup')}
+                        className="underline underline-offset-2 decoration-[var(--color-gold)] text-[var(--color-gold)]"
+                    >
+                        彩妝課
+                    </button>
                 </p>
             </div>
         </div>
