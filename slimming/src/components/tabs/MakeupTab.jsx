@@ -1,6 +1,7 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
 import FadeIn from '../FadeIn';
+import SmartImg from '../SmartImg';
 import { buildLineUrl, LINE_TEXT } from '../../lib/line';
 
 // 彩妝課色票：延用 index.css 的 --color-rose 系列，跟其他分頁的莫蘭迪色系一致但獨立出來
@@ -16,7 +17,7 @@ const Section = ({ children, className = '', id = '' }) => (
   </section>
 );
 
-// 本頁不放照片，用色塊＋線條做裝飾
+// 裝飾用色塊＋線條；照片放 public/makeup/（檔案不存在時 SmartImg 會自動隱藏，不會出現破圖）
 const Divider = () => (
   <div className="flex items-center justify-center gap-2 my-6">
     <div className="w-8 h-px" style={{ backgroundColor: ROSE }} />
@@ -41,7 +42,12 @@ const PrimaryButton = ({ text }) => (
   </a>
 );
 
-const PlanCard = ({ tag, title, tagline, price, detail, ctaText }) => (
+// 照片：檔案不存在就整塊不顯示
+const Photo = ({ base, alt }) => (
+  <SmartImg base={base} alt={alt} className="w-full rounded-[1.5rem] mb-6 object-cover" loading="lazy" />
+);
+
+const PlanCard = ({ tag, title, tagline, detail, target }) => (
   <div className="rounded-[2rem] border p-6" style={{ backgroundColor: '#FFFFFF', borderColor: ROSE_BG }}>
     <span
       className="inline-block text-[10px] tracking-[0.2em] uppercase font-medium px-3 py-1 rounded-full mb-4"
@@ -51,9 +57,15 @@ const PlanCard = ({ tag, title, tagline, price, detail, ctaText }) => (
     </span>
     <h3 className="text-lg font-medium mb-2" style={{ color: INK }}>{title}</h3>
     <p className="text-sm font-light mb-4" style={{ color: INK_SOFT }}>{tagline}</p>
-    <p className="text-2xl font-serif mb-1" style={{ color: ROSE }}>{price}</p>
     <p className="text-sm font-light mb-6" style={{ color: INK_SOFT }}>{detail}</p>
-    <PrimaryButton text={ctaText} />
+    <button
+      type="button"
+      onClick={() => document.getElementById(target)?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+      className="text-sm font-light tracking-wider underline underline-offset-4"
+      style={{ color: ROSE_DARK }}
+    >
+      看課程內容 ↓
+    </button>
   </div>
 );
 
@@ -99,17 +111,15 @@ export default function MakeupTab() {
               tag="方案 A"
               title="一對一彩妝教學實作課"
               tagline="先解決眼前最卡關的地方。"
-              price="NT$1,600"
               detail="2 小時，當堂完成一個妝容。"
-              ctaText={LINE_TEXT.makeupA}
+              target="plan-a"
             />
             <PlanCard
               tag="方案 B"
               title="個人彩妝養成課"
               tagline="從頭建立一套屬於自己的妝容系統。"
-              price="NT$18,800"
-              detail="3 堂共 6 小時，一對一，每月限收 5 位。"
-              ctaText={LINE_TEXT.makeupB}
+              detail="3 堂共 6 小時，一對一，含專屬養膚彩妝組。"
+              target="plan-b"
             />
           </div>
         </FadeIn>
@@ -127,16 +137,14 @@ export default function MakeupTab() {
             <p>
               如果妳想要的是一整套屬於自己的化妝邏輯，從打底、修容到不同場合的妝感都學會，「個人彩妝養成課」會分三堂一步步帶妳建立起來。
             </p>
-            <p>
-              上過 1,600 的實作課，之後再報 18,800 的養成課，1,600 可以全額折抵。
-            </p>
           </div>
         </FadeIn>
       </Section>
 
       {/* 4. 方案 A 詳情 */}
-      <Section>
+      <Section id="plan-a" className="scroll-mt-4">
         <FadeIn>
+          <Photo base="/makeup/class-a" alt="Han 一對一彩妝教學實作課上課情形" />
           <span className="text-[10px] tracking-[0.2em] uppercase font-medium" style={{ color: ROSE }}>Plan A</span>
           <h2 className="text-xl font-serif font-light mt-2 mb-4" style={{ color: INK }}>一對一彩妝教學實作課</h2>
           <Divider />
@@ -163,7 +171,7 @@ export default function MakeupTab() {
       </Section>
 
       {/* 5. 方案 B 詳情 */}
-      <Section className="bg-white">
+      <Section id="plan-b" className="scroll-mt-4 bg-white">
         <FadeIn>
           <span className="text-[10px] tracking-[0.2em] uppercase font-medium" style={{ color: ROSE }}>Plan B</span>
           <h2 className="text-xl font-serif font-light mt-2 mb-4" style={{ color: INK }}>個人彩妝養成課</h2>
@@ -190,11 +198,17 @@ export default function MakeupTab() {
                 </li>
               </ul>
             </div>
-            <div>
-              <p>
-                課程包含專屬養膚彩妝組：超過 15 樣正品，依妳的膚質調整、依膚色與妝感搭配，每一份都不是制式組合。第一堂了解膚質與適合妝容，第二堂交付產品。每月只收 5 位，確保每一堂都能好好教。
-              </p>
+            <div className="rounded-[1.5rem] p-6" style={{ backgroundColor: ROSE_BG }}>
+              <p className="text-[10px] tracking-[0.2em] uppercase font-medium mb-2" style={{ color: ROSE_DARK }}>Included</p>
+              <p className="text-lg font-medium mb-3" style={{ color: INK }}>課程包含：專屬養膚彩妝組</p>
+              <Photo base="/makeup/kit" alt="個人彩妝養成課附贈的專屬養膚彩妝組" />
+              <ul className="space-y-2 text-sm font-light" style={{ color: INK_SOFT }}>
+                <li>・超過 15 樣正品，上完課直接帶回家用</li>
+                <li>・依妳的膚質調整、依膚色與妝感搭配，每一份都不是制式組合</li>
+                <li>・第一堂了解膚質與適合妝容，第二堂交付產品</li>
+              </ul>
             </div>
+            <p>每月只收 5 位，確保每一堂都能好好教。</p>
             <div>
               <p className="font-medium mb-1" style={{ color: INK }}>費用</p>
               <p>NT$18,800，訂金 NT$2,000，第一堂上課付清尾款。上過「彩妝教學實作課」的話，1,600 元全額折抵。</p>

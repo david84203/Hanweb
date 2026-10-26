@@ -27,6 +27,7 @@ const offers = [
     title: "🕊️ 階段一：細節保養｜感知優雅的開始",
     image: "/skin/02",
     budgetTip: "適合想微調狀態的妳，用最小的改變感受質感升級。",
+    cta: { text: "我想了解這組 🤍", lineText: "Han～我想了解【階段一：細節保養】的組合" },
     items: [
       { name: "1.【柔嫩細節・唇部柔焦 SPA 組】", desc: "最迷人的妝容，往往藏在細節裡。富含乳木果油溫和帶走死皮，深層封存水分，重現母胎般的柔嫩唇色。" },
       { name: "2.【明眸亮眼・眼周平撫微導霜】", desc: "告別熬夜疲態。輕盈質地好吸收、不給眼周帶來多餘負擔，每天早晚的點按，就是點亮眼神的專屬儀式。" },
@@ -34,9 +35,10 @@ const offers = [
     ]
   },
   {
-    title: "🌿 階段二：基礎體驗｜建立純淨屏障",
+    title: "🌿 階段二：基礎打底｜建立純淨屏障",
     image: "/skin/03",
     budgetTip: "適合尋找溫和打底的妳，給予肌膚極簡且安心的呵護。",
+    cta: { text: "我想了解這組 🤍", lineText: "Han～我想了解【階段二：基礎打底】的組合" },
     items: [
       { name: "4.【極簡淨化・會呼吸的洗顏組】", desc: "保養的第一步從把臉洗對開始。溫和帶走油脂髒汙不乾澀，還原肌膚深呼吸的純淨感。" },
       { name: "5.【舒緩純粹・屏障調理水潤組】", desc: "給予嬌弱肌膚最安心的避風港。極簡純粹的植萃呵護力安撫躁動，找回喝飽水般的健康柔嫩。" },
@@ -46,6 +48,7 @@ const offers = [
     title: "✨ 階段三：核心週期｜精準煥新計畫",
     image: "/skin/04",
     budgetTip: "針對渴望明顯改善粗糙、暗沉與瑕疵的妳。用一季的時間，投資肌膚的細緻透亮。",
+    cta: { text: "我想了解這組 🤍", lineText: "Han～我想了解【階段三：核心週期】的組合" },
     items: [
       {
         name: "6.【溫和拋光・0.3% A醇煥新計畫】 🌟 (Han 私心最愛)",
@@ -123,26 +126,12 @@ export default function SkinTab({ onNavigate }) {
         </ul>
       </Section>
 
-      {/* 體驗 CTA */}
-      <Section className="bg-white">
-        <div className="bg-[#F4EFEB] rounded-[2rem] p-8 text-center">
-          <h2 className="text-xl font-serif font-light text-gray-900 mb-4">在決定之前，先讓肌膚親自感受。</h2>
-          <p className="text-gray-700 font-light leading-relaxed mb-8 text-sm">
-            每個月開放 <strong className="text-gray-900 font-medium">10 個免費「肌膚微體驗」名額</strong>，到店讓肌膚親自試過再決定。<br /><br />不方便來店也沒關係，在 LINE 裡我一樣會仔細幫妳看膚況、推薦最適合妳的。直接購買也不用擔心，都有三個月滿意保證。
-          </p>
-          <PrimaryButton
-            href={buildLineUrl(LINE_TEXT.skinTrial)}
-            text="預約免費肌膚微體驗 🕊️"
-          />
-        </div>
-      </Section>
-
       {/* 方案 */}
       <Section className="bg-white" id="offers">
         <h2 className="text-2xl font-serif font-light text-gray-900 mb-4">尋找妳的專屬養膚提案 ✨</h2>
         <div className="w-12 h-px bg-[#8C7A6B] mb-6" />
         <p className="text-gray-600 font-light leading-relaxed text-sm mb-10">
-          依照目前的膚況，看看妳落在哪個階段：
+          以下是 Han 依膚況配好的保養組合，都是帶回家每天自己用的。<br />看看妳現在落在哪個階段：
         </p>
         <div className="space-y-8">
           {offers.map((offer, index) => (
@@ -171,6 +160,20 @@ export default function SkinTab({ onNavigate }) {
               </div>
             </div>
           ))}
+        </div>
+      </Section>
+
+      {/* 體驗 CTA */}
+      <Section className="bg-white">
+        <div className="bg-[#F4EFEB] rounded-[2rem] p-8 text-center">
+          <h2 className="text-xl font-serif font-light text-gray-900 mb-4">還不確定哪一組適合妳？</h2>
+          <p className="text-gray-700 font-light leading-relaxed mb-8 text-sm">
+            先來店裡讓肌膚親自試過再決定，每個月開放 <strong className="text-gray-900 font-medium">10 個免費「肌膚微體驗」名額</strong>。<br /><br />不方便來店也沒關係，在 LINE 裡我一樣會仔細幫妳看膚況、推薦最適合妳的。直接購買也不用擔心，都有三個月滿意保證。
+          </p>
+          <PrimaryButton
+            href={buildLineUrl(LINE_TEXT.skinTrial)}
+            text="預約免費肌膚微體驗 🕊️"
+          />
         </div>
       </Section>
 
