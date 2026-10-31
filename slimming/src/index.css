@@ -3,12 +3,20 @@
 /* ── Design Tokens ── */
 :root {
   --color-cream:     #FCFBF9;
-  --color-sage:      #7A8A77;
-  --color-sage-bg:   #D4DFD2;
+  /* 2026-11-01 Lu：Lu 和 Han 不喜歡綠色，原灰綠 #7A8A77／#D4DFD2 改駝色（變數名沿用，免改 18 處） */
+  --color-sage:      #9C7B5B;
+  --color-sage-bg:   #E8D9C6;
   --color-gold:      #A88B54;
   --color-gold-bg:   #F4E8D1;
   --color-rose:      #A87B7B;
   --color-rose-bg:   #F2E3E3;
+}
+
+/* 2026-11-01 Lu：細字太淡難讀，全站 font-thin／extralight／light 一律改成正常字重 */
+@theme {
+  --font-weight-thin: 400;
+  --font-weight-extralight: 400;
+  --font-weight-light: 400;
 }
 
 /* ── Typography ── */
